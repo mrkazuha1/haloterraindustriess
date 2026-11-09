@@ -1,0 +1,13 @@
+{
+  "name": "halo-terra-industries-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайт сервера HALO TERRA INDUSTRIES",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
