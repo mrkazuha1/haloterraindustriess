@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Лор — HALO TERRA INDUSTRIES</title>
+  <meta name="description" content="Подробный лор сервера HALO TERRA INDUSTRIES.">
+  <link rel="icon" href="assets/logo.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&family=Russo+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <a class="brand" href="./">
+      <img src="assets/logo.jpg" alt="" width="36" height="36">
+      <span>HALO TERRA</span>
+    </a>
+    <nav class="nav" aria-label="Разделы сайта">
+      <a href="#anthem">Гимн</a>
+      <a href="#news">Новости</a>
+      <a href="lore.html">Лор</a>
+      <a href="#professions">Алгоритмы</a>
+      <a href="players.html">Игроки</a>
+      <a href="#join">Вступить</a>
+    </nav>
+    <a class="btn btn-small btn-support" href="support.html">Поддержка</a>
+    <div class="account" id="account"></div>
+  </header>
+
+  <main>
+    <div class="page-top">
+      <a class="back-link" href="./">← На главную</a>
+    </div>
+
+    <section class="panel lore-page" id="loreView">
+      <p class="muted">Загрузка лора…</p>
+    </section>
+
+    <!-- Редактор виден только владельцу -->
+    <section class="panel owner-only" id="loreEditor">
+      <div class="section-head">
+        <h2>Редактор лора</h2>
+      </div>
+      <form id="loreForm" class="stack">
+        <label>Заголовок страницы
+          <input name="title" maxlength="150" required>
+        </label>
+        <label>Вступление
+          <textarea name="intro" rows="3" maxlength="3000"></textarea>
+        </label>
+        <div id="loreSections" class="stack"></div>
+        <div class="row">
+          <button class="btn" type="button" id="addSection">+ Добавить раздел</button>
+          <button class="btn btn-primary" type="submit">Сохранить лор</button>
+          <span class="form-msg" id="loreMsg" role="status"></span>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© HALO TERRA INDUSTRIES</span>
+    <span>Империя заботится о вас</span>
+  </footer>
+
+  <!-- Окно входа и регистрации -->
+  <div class="modal" id="authModal" hidden>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal-close" id="closeAuth" type="button" aria-label="Закрыть">×</button>
+      <h2 class="modal-title" id="authTitle">Вход в Империю</h2>
+      <div class="tabs" role="tablist">
+        <button class="tab is-active" type="button" role="tab" data-mode="login" aria-selected="true">Вход</button>
+        <button class="tab" type="button" role="tab" data-mode="register" aria-selected="false">Регистрация</button>
+      </div>
+      <form id="authForm" class="stack">
+        <label>Логин
+          <input name="login" autocomplete="username" minlength="3" maxlength="16" required>
+        </label>
+        <label>Пароль
+          <input name="password" type="password" autocomplete="current-password" minlength="6" maxlength="128" required>
+        </label>
+        <label class="only-register" hidden>Повторите пароль
+          <input name="password2" type="password" autocomplete="new-password" maxlength="128">
+        </label>
+        <button class="btn btn-primary" id="authSubmit" type="submit">Войти</button>
+        <p class="form-msg" id="authMsg" role="alert"></p>
+      </form>
+    </div>
+  </div>
+
+  <script src="config.js"></script>
+  <script src="common.js"></script>
+  <script src="lore.js"></script>
+</body>
+</html>
